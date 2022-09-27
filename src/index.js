@@ -19,7 +19,7 @@ const SECURE_KEY="abcd,1234"
 // simple account model for this application, user list is defined like so
 const Account = require('./account');
 
-const oidc = new Provider(`https://localhost:3000`, {
+const oidc = new Provider(`https://localhost:3001`, {
   //adapter: RedisAdapter,
   clients: [
     {
