@@ -13,6 +13,8 @@ http://localhost:3000/auth?client_id=azure&response_type=code&redirect_uri=https
 -- Response both code and id_token
 http://localhost:3000/auth?client_id=azure&response_type=code id_token&redirect_uri=https://example.com/&scope=openid email&nonce=foobar
 
+http://localhost:3001/auth?client_id=testid&response_type=code&redirect_uri=https://example.com/&scope=launch%20openid%20fhirUser%20patient/Patient.read&nonce=foobar
+
 
 http://localhost:3000/.well-known/openid-configuration
 

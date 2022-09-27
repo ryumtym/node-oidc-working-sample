@@ -30,6 +30,16 @@ const oidc = new Provider(`https://localhost:3001`, {
       grant_types: ['implicit','authorization_code','client_credentials','refresh_token'],
       token_endpoint_auth_method: 'client_secret_basic',
     },
+    {
+      client_id: 'testid',
+      client_secret: 'secret',
+      scope:'launch openid fhirUser patient/Patient.read',
+      redirect_uris: ["https://example.com/"], // using jwt.io as redirect_uri to show the ID Token contents
+      response_types: ['code'],
+      grant_types: ['authorization_code'],
+      token_endpoint_auth_method: 'none',
+      jwks_uri:"http://localhost:3001/jwks",
+    },
   ],
   cookies: {
     keys: SECURE_KEY.split(','),
@@ -37,7 +47,7 @@ const oidc = new Provider(`https://localhost:3001`, {
   pkce: {
     required: () => false,
   },
-  scopes: ['openid', 'offline_access', 'email', 'profile'],
+  scopes: ['launch', 'openid', 'offline_access', 'email', 'profile', 'patient/*.read','fhirUser','patient/Patient.read'],
   jwks,
 
   // oidc-provider only looks up the accounts by their ID when it has to read the claims,
