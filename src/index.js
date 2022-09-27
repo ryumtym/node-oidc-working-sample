@@ -14,7 +14,7 @@ const Provider = require('oidc-provider');
 
 //const RedisAdapter = require('./redis_adapter');
 const jwks = require('./jwks.json');
-const PORT=3000
+const PORT=3001
 const SECURE_KEY="abcd,1234"
 // simple account model for this application, user list is defined like so
 const Account = require('./account');
